@@ -1,22 +1,27 @@
 function getComputerChoice()    {
     const choices = ["Rock", "Paper", "Scissors"];
-    var randomChoice= choices[Math.floor(Math.random() * choices.length)];
+    let randomChoice= choices[Math.floor(Math.random() * choices.length)];
+    return randomChoice;
     }
 
-const playerSelection = prompt('Make a move','');
-const ComputerSelection = getComputerChoice();
-
-
-function playRound(PlayerSelection, ComputerSelection){
-}else {
-        return(`You lose! ${} beats ${}!`)
+function gameResults(playerSelection, computerSelection){
+    if (playerSelection == computerSelection){
+        return 'Tie game!';
     }
-console.log(playRound);
+    else if(
+        (playerSelection == "Rock" && computerSelection) == "Scissors" ||
+        (playerSelection == "Paper" && computerSelection) == "Rock" ||
+        (playerSelection == "Scissors" && computerSelection) == "Paper"
+    ){
+        return 'You win!'; 
+    } else {
+        return 'Computer wins!';}
+    }
 
-function game(){
-    playRound
-}
 
+const playerSelection = prompt('Choose Rock, Paper or Scissors','');
+const computerSelection = getComputerChoice();
+alert(gameResults(playerSelection,computerSelection));
 
 // //a function that returns 1 of 3 values randomly to represent a computer opponent's choice
 
